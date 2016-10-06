@@ -46,6 +46,10 @@ body {
     max-width: 800px;
 }
 
+.years ul {
+    padding: 0;
+}
+
 .years ul a {
     color: #008F0D;
     text-decoration: none;
