@@ -19,7 +19,6 @@
     }
 
     include './connect.php';
-    include './header.php';
 
     $search = isset($_REQUEST['q']) ? clean_search($_REQUEST['q']) : null;
     $statement = null;
