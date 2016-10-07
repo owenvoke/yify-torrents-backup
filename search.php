@@ -34,7 +34,7 @@
             // $statement->bind_param('s', $s);
         }
         $statement->execute();
-        $statement->bind_result($title, $category, $link, $hash, $size, $age, $seeds, $leech);
+        $statement->bind_result($id, $title, $category, $link, $hash, $size, $age, $seeds, $leech);
     } else {
         header('location: /');
     }
@@ -61,13 +61,15 @@
                     <td class="nobr"><?= $category ?></td>
                     <td><?= $age . ' (' . time_ago($age) . ')' ?></td>
                     <td><?= strtoupper($hash) ?></td>
-                    <?php preg_match('/(?P<name>.*)-t(?P<num>.*).html/', '' . $link, $tID);
-                    $title = $tID['name']; ?>
+                    <?php $title = urlencode($title); ?>
                     <td class="lasttd"><a class="magnet-icon"
                                           href="<?= 'magnet:?xt=urn:btih:' . $hash . '&dn=' . $title . $trackers ?>"></a>
                     </td>
                 </tr>
             <?php endwhile; ?>
+            <?php if ($i == 0): ?>
+                <tr><td colspan="5"><h3 class="text-center">No Results Found</h3></td></tr>
+            <?php endif; ?>
         </table>
     <?php endif; ?>
 
