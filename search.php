@@ -54,7 +54,7 @@
             </tr>
             <?php $i = 0;
             $link = $category = $age = $hash = $title = '';
-            while ($statement->fetch()): ?>
+            while ($statement !== null && $statement->fetch()): ?>
                 <?php ++$i; ?>
                 <tr class="<?= $i % 2 == 0 ? 'even' : 'odd' ?>">
                     <td><a class="cellMainLink" href="<?= $kat . '/' . $link ?>"><?= $title ?></a></td>
