@@ -57,7 +57,7 @@
             while ($statement !== null && $statement->fetch()): ?>
                 <?php ++$i; ?>
                 <tr class="<?= $i % 2 == 0 ? 'even' : 'odd' ?>">
-                    <td><a class="cellMainLink" href="<?= $kat . '/' . $link ?>"><?= $title ?></a></td>
+                    <td><a class="cellMainLink" href="/info.php?id=<?=$id?>"><?= $title ?></a></td>
                     <td class="nobr"><?= $category ?></td>
                     <td><?= $age . ' (' . time_ago($age) . ')' ?></td>
                     <td><?= strtoupper($hash) ?></td>
