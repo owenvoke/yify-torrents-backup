@@ -63,8 +63,10 @@
 	div {
 		vertical-align: top;
 	}
+	.summary {
+		width: 500px;
+	}
 	.movie-block {
-		max-width: 800px;
 		margin: 0 auto;
 	}
 	.movie-title {
