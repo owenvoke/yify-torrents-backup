@@ -1,14 +1,3 @@
-.data {
-    border: medium none;
-    margin: 7px 0 20px;
-    width: auto;
-    font-size: 11px;
-}
-
-.data tr.firstr, .data tr.firstr:hover {
-    background: transparent none repeat scroll 0 0;
-}
-
 .hover-bottom {
     border: transparent;
     border-bottom: 1px solid #008F0D;
@@ -46,10 +35,43 @@
     border-radius: 1px;
 }
 
-.data tr.odd:hover, .data tr.even:hover, .odd {
-    background: #F4F1E7 none repeat scroll 0 0;
-}
-
 .yify-green span, .yify-green a {
     color: #57C328;
+}
+
+table.table tr td {
+    max-width: 0;
+    text-align: left;
+}
+
+.date-column {
+    width: 10%;
+    max-width: none;
+    text-wrap: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: right;
+}
+
+.hash-column {
+    max-width: 0;
+    text-wrap: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.size-column {
+    width: 8em;
+    text-wrap: none;
+    white-space: nowrap;
+}
+
+.magnet-column {
+    width: 50px;
+}
+
+a.no-underline {
+    text-decoration: none !important;
 }
