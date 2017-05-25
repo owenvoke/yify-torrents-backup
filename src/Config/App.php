@@ -15,4 +15,11 @@ class App
     // Logging Configuration
     const LOG_DIRECTORY = ROOT_PATH . 'logs';
     const LOG_ERROR = 'errors.log';
+
+    // Torrents Configuration
+    const DEFAULT_TRACKERS = [
+        'udp://9.rarbg.com:2710/announce',
+        'udp://tracker.publicbt.com/announce',
+        'udp://open.demonii.com/1337'
+    ];
 }
