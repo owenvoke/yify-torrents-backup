@@ -4,7 +4,7 @@
         <img src="/assets/images/logo.png" alt="YIFY Torrents Logo">
     </div>
     <div class="form-group">
-        <form action="/search" method="post">
+        <form action="/search" method="get">
             <input placeholder="I want to watch..." autocomplete="off" name="q"
                    type="text" class="hover-bottom big-search">
         </form>
