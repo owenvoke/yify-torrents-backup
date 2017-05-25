@@ -1,31 +1,15 @@
-body {
-    margin: 0;
-    padding-top: 5px;
-    display: table;
-    height: 100%;
-    width: 100%;
-}
-
 .data {
     border: medium none;
-    margin: 7px 0px 20px;
+    margin: 7px 0 20px;
     width: auto;
     font-size: 11px;
 }
 
 .data tr.firstr, .data tr.firstr:hover {
-    background: transparent none repeat scroll 0% 0%;
-}
-
-.container {
-    text-align: center;
-    margin: auto;
-    vertical-align: middle;
-    display: table-cell;
+    background: transparent none repeat scroll 0 0;
 }
 
 .hover-bottom {
-    padding-bottom: 0px;
     border: transparent;
     border-bottom: 1px solid #008F0D;
     background: transparent;
@@ -38,7 +22,6 @@ body {
 
 .big-search {
     height: 40px;
-    color: white;
     line-height: 40px;
     font-size: 30px;
     text-align: center;
@@ -51,7 +34,6 @@ body {
 }
 
 .years ul a {
-    color: #008F0D;
     text-decoration: none;
 }
 
@@ -64,157 +46,10 @@ body {
     border-radius: 1px;
 }
 
-.search-sect {
-    margin-bottom: 3em;
-}
-
-.hover-bottom {
-    padding-bottom: 0px;
-    border: transparent;
-    border-bottom: 1px solid #008F0D;
-    background: transparent;
-}
-
-.hover-bottom:focus {
-    outline: none;
-    border-bottom: 1px solid #00C000;
-}
-
-.big-search {
-    height: 40px;
-    color: white;
-    line-height: 40px;
-    font-size: 30px;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-}
-
-.data tr th {
-    cursor: default;
-    font-size: 1em;
-    letter-spacing: 0.03em;
-    color: #999;
-    text-transform: uppercase;
-    white-space: nowrap;
-    font-family: "Lucida Grande", Arial, Helvetica, Verdana, sans-serif;
-}
-
-.data tr td, .data tr th {
-    padding: 4px 6px;
-    border-width: medium 1px 1px medium;
-    border-style: none solid solid none;
-    border-color: #E0E0E0;
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image: none;
-    vertical-align: middle;
-    margin: 0px;
-    text-align: left;
-}
-
-.width100perc, td.width100perc {
-    width: 100% !important;
-}
-
-.nopad, td.nopad {
-    padding: 0px !important;
-}
-
-.nobr {
-    white-space: nowrap !important;
-}
-
-.center {
-    text-align: center !important;
-}
-
-.data tr th a {
-    color: #999;
-    position: relative;
-    padding: 0px 0.9em;
-    text-decoration: none;
-}
-
-.data tr.odd, .even {
-    background: #F9F9F9 none repeat scroll 0% 0%;
-}
-
-.cellMainLink {
-    font-size: 12px;
-    color: #757575;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.green {
-    color: #008F0D !important;
-}
-
-.red {
-    color: #B94309 !important;
-}
-
-.data tr .lasttd {
-    border-right: medium none;
-    vertical-align: middle;
-}
-
-body {
-    font-size: 12px;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    color: #333;
-    background-color: #1D1D1D;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-a {
-    text-decoration: none;
-    color: #4c2dd2;
-}
-
 .data tr.odd:hover, .data tr.even:hover, .odd {
-    background: #F4F1E7 none repeat scroll 0% 0%;
+    background: #F4F1E7 none repeat scroll 0 0;
 }
 
-/* Magnet icon on torrent search result column */
-
-.magnet-icon {
-    background-image: url('/public/assets/images/images/magnet-icon.png');
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-}
-
-/* logo */
-
-.banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(../images/logo-YTS-TB.png) no-repeat;
-    width: 340px;
-    /* Width of new image */
-    height: 79px;
-    /* Height of new image */
-    padding-left: 340px;
-    /* Equal to width of new image */
-    position: absolute;
-    left: 0;
-    top: 0;
-    /* bottom:0; */
-    /* right:0; */
-}
-
-h1, h2, h3, h4, h5, h6 {
+.yify-green span, .yify-green a {
     color: #57C328;
-}
-
-.text-center {
-    text-align: center;
 }
