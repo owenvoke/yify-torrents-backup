@@ -35,7 +35,7 @@
     border-radius: 1px;
 }
 
-.yify-green span, .yify-green a {
+.yify-green, .yify-green span, .yify-green a {
     color: #57C328;
 }
 
