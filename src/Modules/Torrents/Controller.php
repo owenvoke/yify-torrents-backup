@@ -31,11 +31,23 @@ class Controller extends Routing\Base
 
         $data->torrent = Torrents\Model::byId($torrent_id);
 
-        $this->smarty->display(
-            'torrents/show.tpl',
-            [
-                'data' => $data
-            ]
-        );
+        if ($data->torrent) {
+            $this->smarty->display(
+                'torrents/show.tpl',
+                [
+                    'data' => $data
+                ]
+            );
+        } else {
+            $error = new \Error('Torrent not found.', 404);
+            http_response_code(404);
+
+            $this->smarty->display(
+                'error.tpl',
+                [
+                    'error' => $error
+                ]
+            );
+        }
     }
 }
