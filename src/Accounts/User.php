@@ -36,7 +36,7 @@ class User
                 }
                 unset($user);
             }
-            $db->query('USE chillies');
+            $db->query('USE `yify-torrents`');
         } else {
             $this->acl = Accounts\ACL::ANON;
         }
