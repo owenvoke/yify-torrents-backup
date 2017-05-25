@@ -22,4 +22,5 @@ class App
         'udp://tracker.publicbt.com/announce',
         'udp://open.demonii.com/1337'
     ];
+    const TMDB_API_KEY = '';
 }
