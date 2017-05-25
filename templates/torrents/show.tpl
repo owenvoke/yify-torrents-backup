@@ -2,7 +2,7 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-md-4">
-            <img src="//image.tmdb.org/t/p/w185{$data->torrent->tmdb->poster_path}">
+            <img class="poster-image" alt="Poster" src="//image.tmdb.org/t/p/w185{$data->torrent->tmdb->poster_path}">
         </div>
         <div class="col-md-8 text-left">
             <h2 class="page-header">
@@ -59,12 +59,12 @@
                         <li>
                             <strong>Budget:</strong>
                             <i class="fa fa-usd" aria-hidden="true"></i>
-                            <span>{$data->torrent->tmdb->budget} minutes</span>
+                            <span>{$data->torrent->tmdb->budget}</span>
                         </li>
                         <li>
                             <strong>Revenue:</strong>
                             <i class="fa fa-usd" aria-hidden="true"></i>
-                            <span>{$data->torrent->tmdb->revenue} minutes</span>
+                            <span>{$data->torrent->tmdb->revenue}</span>
                         </li>
                         <li>
                             <strong>Runtime:</strong>
@@ -76,10 +76,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>Other Sites</h3>
-                    <ul class="list-unstyled">
+                    <ul class="list-inline">
                         <li>
-                            <a class="text-warning" href="//www.imdb.com/title/{$data->torrent->tmdb->imdb_id}">
-                                <i class="fa fa-imdb fa-fw fa-3x" aria-hidden="true"></i>
+                            <a class="text-warning no-underline" target="_blank"
+                               title="IMDb"
+                               href="//www.imdb.com/title/{$data->torrent->tmdb->imdb_id}">
+                                <i class="fa fa-imdb" aria-hidden="true"></i> IMDb
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-success no-underline" target="_blank"
+                               title="TMDb"
+                               href="//www.themoviedb.org/movie/{$data->torrent->tmdb->id}">
+                                <i class="fa fa-comment" aria-hidden="true"></i> TMDb
                             </a>
                         </li>
                     </ul>
