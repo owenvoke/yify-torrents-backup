@@ -1,0 +1,97 @@
+.hover-bottom {
+    border: transparent;
+    border-bottom: 1px solid #008F0D;
+    background: transparent;
+}
+
+.hover-bottom:focus {
+    outline: none;
+    border-bottom: 1px solid #00C000;
+}
+
+.big-search {
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.years ul {
+    padding: 0;
+}
+
+.years ul a {
+    text-decoration: none;
+}
+
+.years ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 25px;
+    padding: 2px 5px;
+    border: 1px solid #008F0D;
+    border-radius: 1px;
+}
+
+.yify-green, .yify-green span, .yify-green a {
+    color: #57C328;
+}
+
+table.table tr td {
+    max-width: 0;
+    text-align: left;
+}
+
+.date-column {
+    width: 10%;
+    max-width: none;
+    text-wrap: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: right;
+}
+
+.hash-column {
+    max-width: 0;
+    text-wrap: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.size-column {
+    width: 8em;
+    text-wrap: none;
+    white-space: nowrap;
+}
+
+.magnet-column {
+    width: 50px;
+}
+
+a.no-underline {
+    text-decoration: none !important;
+}
+
+input.navbar-search {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+@media (max-width: 980px) {
+    .size-column {
+        display: none;
+    }
+
+    .date-column {
+        display: none;
+    }
+
+    .hash-column {
+        display: none;
+    }
+}
