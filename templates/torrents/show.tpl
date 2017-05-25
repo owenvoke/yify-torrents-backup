@@ -76,10 +76,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>Other Sites</h3>
-                    <ul class="list-unstyled">
+                    <ul class="list-inline">
                         <li>
-                            <a class="text-warning" href="//www.imdb.com/title/{$data->torrent->tmdb->imdb_id}">
-                                <i class="fa fa-imdb fa-fw fa-3x" aria-hidden="true"></i>
+                            <a class="text-warning no-underline" target="_blank"
+                               title="IMDb"
+                               href="//www.imdb.com/title/{$data->torrent->tmdb->imdb_id}">
+                                <i class="fa fa-imdb" aria-hidden="true"></i> IMDb
+                            </a>
+                        </li>
+                        <li>
+                            <a class="text-success no-underline" target="_blank"
+                               title="TMDb"
+                               href="//www.themoviedb.org/movie/{$data->torrent->tmdb->id}">
+                                <i class="fa fa-comment" aria-hidden="true"></i> TMDb
                             </a>
                         </li>
                     </ul>
