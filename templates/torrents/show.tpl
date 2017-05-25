@@ -2,7 +2,7 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-md-4">
-            <img src="//image.tmdb.org/t/p/w185{$data->torrent->tmdb->poster_path}">
+            <img class="poster-image" alt="Poster" src="//image.tmdb.org/t/p/w185{$data->torrent->tmdb->poster_path}">
         </div>
         <div class="col-md-8 text-left">
             <h2 class="page-header">
@@ -59,12 +59,12 @@
                         <li>
                             <strong>Budget:</strong>
                             <i class="fa fa-usd" aria-hidden="true"></i>
-                            <span>{$data->torrent->tmdb->budget} minutes</span>
+                            <span>{$data->torrent->tmdb->budget}</span>
                         </li>
                         <li>
                             <strong>Revenue:</strong>
                             <i class="fa fa-usd" aria-hidden="true"></i>
-                            <span>{$data->torrent->tmdb->revenue} minutes</span>
+                            <span>{$data->torrent->tmdb->revenue}</span>
                         </li>
                         <li>
                             <strong>Runtime:</strong>

@@ -94,4 +94,14 @@ input.navbar-search {
     .hash-column {
         display: none;
     }
+
+    .poster-image {
+        display: none;
+    }
+}
+
+@media (min-width: 980px) {
+    .poster-image {
+        padding-top: 50px;
+    }
 }
