@@ -23,7 +23,7 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right">
-                {if $_user->__get('id') > 0}
+                {if $_user->acl('logged_in')}
                     <li>
                         <p class="navbar-text">
                             <span class="fa fa-fw fa-user"></span>
