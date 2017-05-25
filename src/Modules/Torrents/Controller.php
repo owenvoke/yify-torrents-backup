@@ -22,4 +22,20 @@ class Controller extends Routing\Base
             ]
         );
     }
+
+    public function show()
+    {
+        $data = new \stdClass();
+
+        $torrent_id = $this->request->args['id'] ?? null;
+
+        $data->torrent = Torrents\Model::byId($torrent_id);
+
+        $this->smarty->display(
+            'torrents/show.tpl',
+            [
+                'data' => $data
+            ]
+        );
+    }
 }

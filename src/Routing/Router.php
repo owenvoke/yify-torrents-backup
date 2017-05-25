@@ -21,6 +21,7 @@ class Router
         // Main
         $route->any('/', ['pxgamer\YifyTorrents\Modules\Base\Controller', 'index']);
         $route->any('/search', ['pxgamer\YifyTorrents\Modules\Torrents\Controller', 'search']);
+        $route->any('/torrent/{id}:([0-9]+)', ['pxgamer\YifyTorrents\Modules\Torrents\Controller', 'show']);
 
         // Route fallback for page not found
         $route->any('/*', ['pxgamer\YifyTorrents\Modules\Base\Controller', 'error_not_found']);
