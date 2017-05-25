@@ -62,10 +62,18 @@ class Model
             if (isset($tmdb_data->tmdb_data)) {
                 $torrent->tmdb = json_decode($tmdb_data->tmdb_data);
             }
+
+            preg_match('/^.*?([0-9]{3,4}p) .*? YIFY$/i', $torrent->title, $matches);
+
+            $torrent->quality = $matches[1] ?? 'UNKNOWN';
         }
 
         if (!isset($torrent->tmdb) || !$torrent->tmdb) {
             $torrent->tmdb = self::addTMDb($torrent);
+
+            if (!$torrent->tmdb) {
+                return null;
+            }
         }
 
         return $torrent;
@@ -82,7 +90,11 @@ class Model
         $tmdb_id = $torrent->tmdb->tmdb_id ?? null;
 
         if (!$tmdb_id) {
-            preg_match('/^(.*)? \(([0-9]{4})\).*?[0-9]{3,4}p .*? YIFY$/i', $torrent->title, $matches);
+            preg_match('/^(.*?)(?: 3D?)?(?: )?\(([0-9]{4})\).*?([0-9]{3,4}p)?.*?YIFY$/i', $torrent->title, $matches);
+
+            if (empty($matches)) {
+                return null;
+            }
 
             $url = 'https://api.themoviedb.org/3/search/movie?query=' . urlencode($matches[1]) .
                 '&year=' . urlencode($matches[2]) .
