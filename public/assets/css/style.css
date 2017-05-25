@@ -75,3 +75,23 @@ table.table tr td {
 a.no-underline {
     text-decoration: none !important;
 }
+
+input.navbar-search {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+@media (max-width: 980px) {
+    .size-column {
+        display: none;
+    }
+
+    .date-column {
+        display: none;
+    }
+
+    .hash-column {
+        display: none;
+    }
+}
