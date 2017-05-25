@@ -15,6 +15,13 @@
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-main">
+            <form class="navbar-form navbar-left" action="/search" method="get">
+                <div class="form-group">
+                    <input name="q" type="text" class="form-control navbar-search hover-bottom" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
             <ul class="nav navbar-nav navbar-right">
                 {if $_user->__get('id') > 0}
                     <li>
