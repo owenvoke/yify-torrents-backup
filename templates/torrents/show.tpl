@@ -18,6 +18,12 @@
                     <span class="fa fa-fw fa-video-camera" aria-hidden="true"></span>
                     <span>{$data->torrent->quality}</span>
                 </span>
+                <span title="Download via Magnet">
+                    {pxgamer\YifyTorrents\Modules\Torrents\Helper::magnetLink($data->torrent->hash, $data->torrent->title, true)}
+                </span>
+                <span title="Download via Torrent">
+                    {pxgamer\YifyTorrents\Modules\Torrents\Helper::torrentLink($data->torrent->hash, $data->torrent->title, true)}
+                </span>
                 {if $data->torrent->tmdb->original_title !== $data->torrent->tmdb->title}
                     <span title="Original Title">
                         <span class="fa fa-fw fa-language" aria-hidden="true"></span>
