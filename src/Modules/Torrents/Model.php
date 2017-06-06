@@ -52,8 +52,8 @@ class Model
             }
 
             $stmt = $db->prepare('SELECT td.tmdb_data
-                                            FROM tmdb_data td
-                                            JOIN data_link dl ON dl.tmdb_id = td.tmdb_id
+                                            FROM `meta_data`.tmdb_data td
+                                            JOIN `yify-torrents`.data_link dl ON dl.meta_id = td.tmdb_id
                                             WHERE dl.torrent_id = :torrent_id');
             $stmt->bindParam(':torrent_id', $torrent_id, \PDO::PARAM_INT);
             $stmt->execute();
@@ -120,15 +120,20 @@ class Model
         $response = self::curl_it($url);
 
         if ($response->success) {
-            $stmt = $db->prepare('INSERT INTO tmdb_data (tmdb_id, tmdb_data) VALUES (:tmdb_id, :tmdb_data)');
+            $stmt = $db->prepare('INSERT IGNORE INTO `meta_data`.tmdb_data
+                                            (type, tmdb_id, tmdb_data) VALUES
+                                            (\'movie\', :tmdb_id, :tmdb_data)');
             $stmt->bindParam(':tmdb_id', $tmdb_id, \PDO::PARAM_INT);
             $stmt->bindParam(':tmdb_data', $response->response, \PDO::PARAM_STR);
             $stmt->execute();
+            $meta_id = $db->lastInsertId();
 
-            $stmt = $db->prepare('INSERT INTO data_link (tmdb_id, torrent_id) VALUES (:tmdb_id, :torrent_id)');
-            $stmt->bindParam(':tmdb_id', $tmdb_id, \PDO::PARAM_INT);
-            $stmt->bindParam(':torrent_id', $torrent->id, \PDO::PARAM_INT);
-            $stmt->execute();
+            if ($meta_id) {
+                $stmt = $db->prepare('INSERT IGNORE INTO data_link (meta_id, torrent_id) VALUES (:meta_id, :torrent_id)');
+                $stmt->bindParam(':meta_id', $meta_id, \PDO::PARAM_INT);
+                $stmt->bindParam(':torrent_id', $torrent->id, \PDO::PARAM_INT);
+                $stmt->execute();
+            }
 
             return json_decode($response->response);
         }
