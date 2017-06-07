@@ -53,7 +53,7 @@ class Model
 
             $stmt = $db->prepare('SELECT td.tmdb_data
                                             FROM `meta_data`.tmdb_data td
-                                            JOIN `yify-torrents`.data_link dl ON dl.meta_id = td.tmdb_id
+                                            JOIN `yify-torrents`.data_link dl ON dl.meta_id = td.id
                                             WHERE dl.torrent_id = :torrent_id');
             $stmt->bindParam(':torrent_id', $torrent_id, \PDO::PARAM_INT);
             $stmt->execute();
