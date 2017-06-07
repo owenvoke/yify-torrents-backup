@@ -128,12 +128,16 @@ class Model
             $stmt->execute();
             $meta_id = $db->lastInsertId();
 
-            if ($meta_id) {
-                $stmt = $db->prepare('INSERT IGNORE INTO data_link (meta_id, torrent_id) VALUES (:meta_id, :torrent_id)');
-                $stmt->bindParam(':meta_id', $meta_id, \PDO::PARAM_INT);
-                $stmt->bindParam(':torrent_id', $torrent->id, \PDO::PARAM_INT);
-                $stmt->execute();
+            if (!$meta_id) {
+                $stmt = $db->prepare('SELECT id FROM `meta_data`.tmdb_data WHERE type = \'tv\' AND tmdb_id = :tmdb_id');
+                $stmt->execute(['tmdb_id' => $tmdb_id]);
+                $meta_id = $stmt->fetch()['id'];
             }
+			
+            $stmt = $db->prepare('INSERT IGNORE INTO data_link (meta_id, torrent_id) VALUES (:meta_id, :torrent_id)');
+            $stmt->bindParam(':meta_id', $meta_id, \PDO::PARAM_INT);
+            $stmt->bindParam(':torrent_id', $torrent->id, \PDO::PARAM_INT);
+            $stmt->execute();
 
             return json_decode($response->response);
         }
