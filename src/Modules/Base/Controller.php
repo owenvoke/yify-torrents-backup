@@ -18,7 +18,7 @@ class Controller extends Routing\Base
         );
     }
 
-    public function error_not_found()
+    public function errorNotFound()
     {
         $error = new \Error('Page not found.', 404);
 

@@ -102,7 +102,7 @@ class Model
                 '&language=en-US&page=1&include_adult=false' .
                 '&api_key=' . Config\App::TMDB_API_KEY;
 
-            $response = self::curl_it($url);
+            $response = self::curlIt($url);
 
             if ($response->success) {
                 $json = json_decode($response->response);
@@ -117,7 +117,7 @@ class Model
 
         $url = 'https://api.themoviedb.org/3/movie/' . $tmdb_id . '?language=en-US&api_key=' . Config\App::TMDB_API_KEY;
 
-        $response = self::curl_it($url);
+        $response = self::curlIt($url);
 
         if ($response->success) {
             $stmt = $db->prepare('INSERT IGNORE INTO `meta_data`.tmdb_data
@@ -133,7 +133,7 @@ class Model
                 $stmt->execute(['tmdb_id' => $tmdb_id]);
                 $meta_id = $stmt->fetch()['id'];
             }
-			
+            
             $stmt = $db->prepare('INSERT IGNORE INTO data_link (meta_id, torrent_id) VALUES (:meta_id, :torrent_id)');
             $stmt->bindParam(':meta_id', $meta_id, \PDO::PARAM_INT);
             $stmt->bindParam(':torrent_id', $torrent->id, \PDO::PARAM_INT);
@@ -145,7 +145,7 @@ class Model
         return null;
     }
 
-    public static function curl_it($url)
+    public static function curlIt($url)
     {
         $status = new \stdClass();
         $status->success = false;
