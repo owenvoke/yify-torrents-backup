@@ -1,7 +1,7 @@
 {
   "name": "pxgamer/yify-torrents-backup",
   "description": "A basic backup of YIFY torrents.",
-  "license": "proprietary",
+  "license": "MIT",
   "require": {
     "nezamy/route": "1.0.*",
     "smarty/smarty": "3.1.*"
